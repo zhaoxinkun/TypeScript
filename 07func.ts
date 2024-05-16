@@ -5,7 +5,7 @@ let func = function (): string {
 };
 
 // 定义参数类型
-let func02 = function (name: string, age: number): string {};
+// let func02 = function (name: string, age: number): string {};
 
 // 箭头函数问题
 let func04 = (name: string, age: number): string => {
