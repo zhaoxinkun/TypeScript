@@ -2,11 +2,11 @@
 // 创建元组,全部声明类型
 let arr: [string, number, boolean] = ["a", 123, true];
 
-// 可选参数
-let arr02: [string, number, boolean?] = ["a", 123];
-
 // 对比数组,类型的定义在[]外
 let arr03: string[] = [];
+
+// 可选参数
+let arr02: [string, number, boolean?] = ["a", 123];
 
 // 是否越界
 let arr04: [string, string] = ["a", "b"];
@@ -16,7 +16,12 @@ let arr04: [string, string] = ["a", "b"];
 type NamedNums = [string, ...number[]];
 const a: NamedNums = ["A", 1, 2];
 const b: NamedNums = ["B", 1, 2, 3];
+type Tuple = [...any[]];
 
+// 成员名
+type Color = [red: number, green: number, blue: number];
+
+const c: Color = [255, 255, 255];
 // 只读元组
 type t = readonly [number, string];
 let arr05: t = [123, "a"];
@@ -29,6 +34,7 @@ let arr05: t = [123, "a"];
 //   }
 // }
 
+// 可选参数
 // function f(point: [number, number?, number?]) {
 //   if (point.length === 4) {
 //     // 报错

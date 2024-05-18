@@ -27,23 +27,24 @@ array05; // 以前会推断为 any[] 现在是never类型
 // arr // error
 
 // 只读数组
-// const arr = [0, 1];
-// arr[0] = 2;
+const array06 = [0, 1];
+array06[0] = 2;
+console.log(array06); //[2,1]
 
-const array06: readonly number[] = [0, 1];
+const array07: readonly number[] = [0, 1];
+// array07[1] = 2; // 报错
+// array07.push(3); // 报错
+// delete array07[0]; // 报错
 
-// array06[1] = 2; // 报错
-// array06.push(3); // 报错
-// delete array06[0]; // 报错
-
-let array07: number[] = [0, 1];
-let array08: readonly number[] = array07; // 正确
-
-// array07 = array08; // 报错
-// array08 = array07; //正确
+// 子承父业
+let array08: number[] = [0, 1];
+let array09: readonly number[] = array08; // 正确
+// array08 = array09; // 报错
+array09 = array08; //正确
 
 // 多维数组
 var multi: number[][] = [
   [1, 2, 3],
   [23, 24, 25],
 ];
+console.log(multi);
